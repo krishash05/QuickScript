@@ -1,0 +1,70 @@
+<div class="patients">
+    <div flex class="doctor-information" layout="row">
+        <div style="padding-right:30px"><i class="fa fa-plus" style="color: rgb(3, 169, 244); font-size: 72px;"></i></div>
+        <div flex layout="column">
+            <h1 style="">Dr. {{doctor.name}}</h1> <br>
+            <h3 style="">{{doctor.practiceName}}</h3>
+        </div>
+        <md-button ng-click="logout()" class="md-primary md-raised" style="color: #ffffff; margin: auto 0; margin-right: 20px; background-color: darkred;" ng-hide="drugs">
+            Logout
+        </md-button>
+
+        <md-button href="#!/addPatientView" class="md-primary md-raised" style="color: #ffffff; margin: auto 0;" ng-hide="drugs">
+            Add New Patient
+        </md-button>
+        <md-button href="#!/addPrescriptionView" class="md-primary md-raised" style="color: #ffffff; margin: auto 0;" ng-show="drugs">
+            Add New Prescription
+        </md-button>
+    </div>
+
+    <div layout="row">
+        <div class="spacer" style="padding: 10px;">
+            <md-button class="md-primary md-raised" style="color: #ffffff;" ng-show="drugs" ng-click="textPatient()">Text this patient</md-button>
+        </div>
+        <div class="spacer" style="padding: 10px;">
+            <md-button class="md-primary md-raised" style="color: #ffffff;" ng-show="drugs" ng-click="goBackToPatientList()">Go Back To Pt List</md-button>
+        </div>
+    </div>
+
+
+    <div class="patients-list" ng-hide="drugs">
+        <md-subheader flex layout="row" style="font-size:28px;">
+            My Patients
+        </md-subheader>
+        <md-list>
+            <md-list-item style="background-color: #efefef;">
+                <p>Name</p>
+                <p>Address</p>
+                <p>SSN</p>
+            </md-list-item>
+            <md-list-item ng-repeat="patient in doctorPatientInformation | filter:searchPatients" ng-click="goToPtDrugList($index)">
+                <p>{{patient.name}}</p>
+                <p>{{patient.address}}</p>
+                <p>{{patient.ssn}}</p>
+            </md-list-item>
+        </md-list>
+    </div>
+
+    <div class="drugs-list" ng-show="drugs">
+        <md-subheader style="font-size:28px;"> {{selectedPatientName}}'s Prescriptions </md-subheader>
+        <md-list>
+            <md-list-item style="background-color: #efefef;">
+                <p>Medication Name</p>
+                <p>Dosage</p>
+                <p>Schedule</p>
+                <p>Times per day</p>
+                <p>Date Prescribed</p>
+            </md-list-item>
+            <md-list-item ng-repeat="drug in drugs" ng-click="null">
+                <p>{{drug.drugName}}</p>
+                <p>{{drug.dosage}}</p>
+                <p>Every {{drug.dosagePeriod}} days</p>
+                <p>{{drug.dosageNumber}} times per day</p>
+                <p>{{drug.datePrescribed}}</p>
+            </md-list-item>
+        </md-list>
+    </div>
+
+
+
+</div>

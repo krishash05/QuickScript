@@ -1,0 +1,31 @@
+<div layout-gt-sm="column" style="max-width: 500px; margin: 0 auto 0;">
+  <!-- Title Section -->
+  <span style="text-align:center; display: block; margin: 0 auto 15px;"><i class="fa fa-plus" style="color: rgb(3, 169, 244); font-size: 72px;"></i></span>
+  <h1 style="margin: 0 auto 25px; text-align: center;">Login</h1>
+
+  <!-- Form -->
+  <div class="login">
+    <md-input-container class="md-block" flex-gt-sm>
+      <label>Email</label>
+      <input ng-model="doctor.email" type="email">
+    </md-input-container>
+    <md-input-container class="md-block" flex-gt-sm>
+      <label>Password</label>
+      <input ng-model="doctor.password" type="password">
+    </md-input-container>
+    <div layout="row" style="transform: translate(-50%, 0);
+         position: absolute;
+         left: 50%">
+      <md-button ng-click="login()"
+                 class="md-primary md-raised"
+                 style="color:white;">
+        Login
+      </md-button>
+      <md-button ng-click="signUp()"
+                 class="md-primary md-raised"
+                 style="color:white;">
+        Sign up
+      </md-button>
+    </div>
+  </div>
+</div>
