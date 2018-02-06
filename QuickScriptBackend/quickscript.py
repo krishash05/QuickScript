@@ -312,8 +312,8 @@ def textPatient():
 #############################################################################
 
 
-ACCOUNT_SID = "AC196bde1976f17bec537a18d74ddfc9dc"
-AUTH_TOKEN = "497c27040c7ef630efe7fb8757ff1c8a"
+ACCOUNT_SID = "..."
+AUTH_TOKEN = "..."
 
 client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
 
