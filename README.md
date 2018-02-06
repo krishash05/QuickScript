@@ -7,4 +7,4 @@ Users will have to answer back with Y-took the pill, N-did not take the pill or 
 This will give the doctors and nurses a snapshot of how and if their paitents are taking drugs as prescibed.
 If the users have not been answering the message or keeps sending No, their doctors and emergency contacts will automatically be notified.
 
-The backend was created with Python Flask. 
+
